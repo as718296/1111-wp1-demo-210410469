@@ -19,9 +19,8 @@ const App_69 = () => {
     e.preventDefault(); //自己控制
     if (!name) {
       showAlert(true, 'please enter value', 'danger');
-      //
     } else {
-      showAlert(true, 'value change', 'success');
+      showAlert(true, 'value changed', 'success');
       const newItem = {
         id: new Date().getTime().toString(),
         title: name,
@@ -35,7 +34,7 @@ const App_69 = () => {
     <>
       <section className='section-center'>
         <form className='grocery-form' onSubmit={handleSumbit}>
-          {alert.show && <Alert_69 {...alert} />}
+          {alert.show && <Alert_69 {...alert} removeAlert={showAlert} />}
           <h3>Grocery Bud - 210410469</h3>
           <div className='form-control'>
             <input
@@ -52,7 +51,12 @@ const App_69 = () => {
             </button>
           </div>
         </form>
-        {}
+        {list.length > 0 && (
+          <div className='grocery-container'>
+            <List_69 items={list} />
+            <button className='clear-btn'>clear items</button>
+          </div>
+        )}
       </section>
     </>
   );
