@@ -7,7 +7,17 @@ const App_xx = () => {
         <div className='section-title'>
           <h2>CSS Grid using breakpoints</h2>
         </div>
-
+        <div className='filter-container'>
+          <button type='button' className='filter-btn' data-id='all'>
+            all
+          </button>
+          <button type='button' className='filter-btn' data-id='lifestyle'>
+            lifestyle
+          </button>
+          <button type='button' className='filter-btn' data-id='travel'>
+            travel
+          </button>
+        </div>
         <div className='blogs-center'>
           <article className='blog'>
             <img
