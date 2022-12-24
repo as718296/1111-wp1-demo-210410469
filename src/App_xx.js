@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import data from './blogData_69';
+import Blog_list_69 from './components/Blog_List_69';
 
 const App_xx = () => {
-  const [blog, setBlogs] = useState(data);
-  console.log('blogs', blog);
+  const [blogs, setBlogs] = useState(data);
+  console.log('blogs', blogs);
   return (
     <>
       <section className='blogs'>
@@ -22,32 +23,7 @@ const App_xx = () => {
           </button>
         </div>
         <div className='blogs-center'>
-          {blog.map((blog) => {
-            const { id, img, tilte, desc, category } = blog;
-            return (
-              <article className='blog'>
-                <img src={img} alt='Coffee photo' className='img blog-img' />
-                <div className='blog-content'>
-                  <span>{category}</span>
-                  <h3>{tilte}</h3>
-                  <p>{desc}</p>
-                  <div className='item-control'>
-                    <a href='#'>read more</a>
-                    <div className='btn-container'>
-                      <button type='button' className='edit-btn'>
-                        {' '}
-                        edit{' '}
-                      </button>
-                      <button type='button' className='delete-btn'>
-                        {' '}
-                        delete{' '}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
+          <Blog_list_69 blogs={blogs} />
         </div>
       </section>
     </>
