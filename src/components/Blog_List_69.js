@@ -1,7 +1,7 @@
 import React from 'react';
 import Blog_69 from './Blog_69';
 
-const Blog_list_69 = ({ blogs }) => {
+const Blog_list_69 = ({ blogs, removeItem }) => {
   return (
     <div className='blogs-center'>
       {blogs.map((blog) => {
@@ -13,6 +13,7 @@ const Blog_list_69 = ({ blogs }) => {
             tilte={tilte}
             desc={desc}
             category={category}
+            removeItem={removeItem}
           />
         );
       })}
