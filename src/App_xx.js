@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import data from './blogData_69';
 
 const App_xx = () => {
+  const [blog, setBlogs] = useState(data);
+  console.log('blogs', blog);
   return (
     <>
       <section className='blogs'>
@@ -19,106 +22,32 @@ const App_xx = () => {
           </button>
         </div>
         <div className='blogs-center'>
-          <article className='blog'>
-            <img
-              src='./images_Q/photo-9.jpg'
-              alt='Coffee photo'
-              className='img blog-img'
-            />
-            <div className='blog-content'>
-              <span>lifestyle</span>
-              <h3>why coffee is awesome</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-              <div className='item-control'>
-                <a href='#'>read more</a>
-                <div className='btn-container'>
-                  <button type='button' className='edit-btn'>
-                    {' '}
-                    edit{' '}
-                  </button>
-                  <button type='button' className='delete-btn'>
-                    {' '}
-                    delete{' '}
-                  </button>
+          {blog.map((blog) => {
+            const { id, img, tilte, desc, category } = blog;
+            return (
+              <article className='blog'>
+                <img src={img} alt='Coffee photo' className='img blog-img' />
+                <div className='blog-content'>
+                  <span>{category}</span>
+                  <h3>{tilte}</h3>
+                  <p>{desc}</p>
+                  <div className='item-control'>
+                    <a href='#'>read more</a>
+                    <div className='btn-container'>
+                      <button type='button' className='edit-btn'>
+                        {' '}
+                        edit{' '}
+                      </button>
+                      <button type='button' className='delete-btn'>
+                        {' '}
+                        delete{' '}
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </article>
-          <article className='blog'>
-            <img
-              src='./images_Q/photo-6.jpg'
-              alt='Coffee photo'
-              className='img blog-img'
-            />
-            <div className='blog-content'>
-              <span>lifestyle</span>
-              <h3>why coffee is awesome</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-              <div className='item-control'>
-                <a href='#'>read more</a>
-                <div className='btn-container'>
-                  <button type='button' className='edit-btn'>
-                    {' '}
-                    edit{' '}
-                  </button>
-                  <button type='button' className='delete-btn'>
-                    {' '}
-                    delete{' '}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article className='blog'>
-            <img
-              src='./images_Q/photo-4.jpg'
-              alt='Coffee photo'
-              className='img blog-img'
-            />
-            <div className='blog-content'>
-              <span>lifestyle</span>
-              <h3>why coffee is awesome</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-              <div className='item-control'>
-                <a href='#'>read more</a>
-                <div className='btn-container'>
-                  <button type='button' className='edit-btn'>
-                    {' '}
-                    edit{' '}
-                  </button>
-                  <button type='button' className='delete-btn'>
-                    {' '}
-                    delete{' '}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article className='blog'>
-            <img
-              src='./images_Q/photo-1.jpg'
-              alt='Coffee photo'
-              className='img blog-img'
-            />
-            <div className='blog-content'>
-              <span>lifestyle</span>
-              <h3>why coffee is awesome</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-              <div className='item-control'>
-                <a href='#'>read more</a>
-                <div className='btn-container'>
-                  <button type='button' className='edit-btn'>
-                    {' '}
-                    edit{' '}
-                  </button>
-                  <button type='button' className='delete-btn'>
-                    {' '}
-                    delete{' '}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
+              </article>
+            );
+          })}
         </div>
       </section>
     </>
