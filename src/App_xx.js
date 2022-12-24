@@ -1,15 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import data from './blogData_69';
 import Blog_list_69 from './components/Blog_List_69';
+import Alert_69 from './components/Alert_69';
+import { type } from '@testing-library/user-event/dist/type';
 
 const App_xx = () => {
   const [blogs, setBlogs] = useState(data);
+  const [alert, setAlert] = useState({
+    show: false,
+    msg: '',
+    type: '',
+  });
+  const showAlert = (show = false, msg = '', type = '') => {
+    setAlert({ show, msg, type });
+  };
+
   console.log('blogs', blogs);
 
   const removeItem = (id) => {
+    showAlert(true, 'blog removed', 'danger');
     setBlogs(blogs.filter((blog) => blog.id !== id));
   };
   const clearBlogs = () => {
+    showAlert(true, 'empty all blogs', 'danger');
     setBlogs([]);
   };
 
@@ -24,6 +37,7 @@ const App_xx = () => {
   return (
     <>
       <section className='blogs'>
+        {alert.show && <Alert_69 {...alert} removeAlert={showAlert} />}
         <div className='section-title'>
           <h2>CSS Grid using breakpoints</h2>
         </div>
