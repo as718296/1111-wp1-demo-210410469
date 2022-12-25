@@ -5,6 +5,8 @@ import AboutPage_69 from './pages/AboutPage_69';
 import ProductsPage_69 from './pages/ProductsPage_69';
 import ErrorPage_69 from './pages/ErrorPage_69';
 import HomePage_69 from './pages/HomePage_69';
+import SingleProductPage_69 from './pages/SingleProductPage_69';
+import ShareProducrLayout_69 from './pages/ShareProducrLayout_69';
 
 function App() {
   return (
@@ -13,7 +15,10 @@ function App() {
         <Route path='/' element={<SharedLayout_69 />}>
           <Route index element={<HomePage_69 />} />
           <Route path='about' element={<AboutPage_69 />} />
-          <Route path='products' element={<ProductsPage_69 />} />
+          <Route path='products' element={<ShareProducrLayout_69 />}>
+            <Route index element={<ProductsPage_69 />} />
+            <Route path=':productId' element={<SingleProductPage_69 />} />
+          </Route>
           <Route path='*' element={<ErrorPage_69 />} />
         </Route>
       </Routes>
