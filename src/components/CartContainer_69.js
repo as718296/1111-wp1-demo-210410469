@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import CartItem from './CartItem_xx';
-import data from '../data';
+import CartItem from './CartItem_69';
+//import data from '../data';
 
-const CartContainer = () => {
-  const [cart, setCart] = useState(data);
-  const [total, setTotal] = useState(0);
-  const [amount, setAmount] = useState(0);
+import { useGlobalContext_69 } from '../Context_69';
+
+const CartContainer_69 = () => {
+  //const [cart, setCart] = useState(data);
+  //const [total, setTotal] = useState(0);
+  //const [amount, setAmount] = useState(0);
+  const { cart, total, amount } = useGlobalContext_69();
   if (cart.length === 0) {
     return (
       <section className='cart'>
@@ -37,12 +40,10 @@ const CartContainer = () => {
             total <span>${total}</span>
           </h4>
         </div>
-        <button className='btn clear-btn'>
-          clear cart
-        </button>
+        <button className='btn clear-btn'>clear cart</button>
       </footer>
     </section>
   );
 };
 
-export default CartContainer;
+export default CartContainer_69;

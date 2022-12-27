@@ -1,9 +1,9 @@
 import React from 'react';
 
 // components
-import Navbar_xx from './components/Navbar_xx';
-import CartContainer_xx from './components/CartContainer_xx';
+import Navbar_69 from './components/Navbar_69';
 import { useGlobalContext_69 } from './Context_69';
+import CartContainer_69 from './components/CartContainer_69';
 // items
 
 const App_xx = () => {
@@ -17,8 +17,8 @@ const App_xx = () => {
   // }
   return (
     <main>
-      <Navbar_xx />
-      <CartContainer_xx />
+      <Navbar_69 />
+      <CartContainer_69 />
     </main>
   );
 };
