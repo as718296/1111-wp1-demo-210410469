@@ -1,19 +1,15 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-
-import './index.css';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.scss';
 import App_xx from './App_xx';
 
-// 👇️ IMPORTANT: use correct ID of your root element
-// this is the ID of the div in your index.html file
-const rootElement = document.getElementById('root');
-const root = createRoot(rootElement);
+import { AppProvider_69 } from './Context_69';
 
-// 👇️ if you use TypeScript, add non-null (!) assertion operator
-// const root = createRoot(rootElement!);
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <StrictMode>
-    <App_xx />
-  </StrictMode>
+  <React.StrictMode>
+    <AppProvider_69>
+      <App_xx />
+    </AppProvider_69>
+  </React.StrictMode>
 );
