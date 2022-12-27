@@ -8,7 +8,7 @@ const CartContainer_69 = () => {
   //const [cart, setCart] = useState(data);
   //const [total, setTotal] = useState(0);
   //const [amount, setAmount] = useState(0);
-  const { cart, total, amount } = useGlobalContext_69();
+  const { cart, total, clearCart } = useGlobalContext_69();
   if (cart.length === 0) {
     return (
       <section className='cart'>
@@ -40,7 +40,9 @@ const CartContainer_69 = () => {
             total <span>${total}</span>
           </h4>
         </div>
-        <button className='btn clear-btn'>clear cart</button>
+        <button className='btn clear-btn' onClick={clearCart}>
+          clear cart
+        </button>
       </footer>
     </section>
   );
