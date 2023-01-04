@@ -8,13 +8,13 @@ import CartContainer_69 from './components/CartContainer_69';
 
 const App_xx = () => {
   const { loading, cart } = useGlobalContext_69();
-  // if (loading) {
-  //   return (
-  //     <div className='loading'>
-  //       <h1>Loading...</h1>
-  //     </div>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <div className='loading'>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
   return (
     <main>
       <Navbar_69 />
