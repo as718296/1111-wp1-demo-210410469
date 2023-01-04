@@ -35,6 +35,12 @@ const Reducer_69 = (state, action) => {
   if (action.type === 'DISPLAY_ITEMS') {
     return { ...state, cart: action.payload, loading: false };
   }
+  if (action.type === 'REMOVE') {
+    const filteredCart = state.cart.filter(
+      (item) => item.id !== action.payload
+    );
+    return { ...state, cart: filteredCart };
+  }
 };
 
 export default Reducer_69;
