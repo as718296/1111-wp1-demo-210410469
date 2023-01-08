@@ -1,0 +1,6 @@
+.filter-left {
+    flex-direction: column;
+}
+h2 {
+    color: blueviolet;
+}
